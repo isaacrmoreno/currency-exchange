@@ -13,8 +13,9 @@
       <h3>Convert Your USD Below!</h3>
 
       <form action="convertCurrency">
-        <label for=""></label>
-        <select name="" id="" class="form-control">
+        <!-- <input type="number"/> I dont know if this is the best place to put this right now. -->
+        <label for="">USD to </label>
+        <select name="currency" id="currency" class="form-control">
           <option disabled hidden selected></option>
           <option value="1">Arab Emirates Dirham (AED)</option>
           <option value="2">Afghan Afghani (AFN)</option>
@@ -25,6 +26,8 @@
         </select>
         <button type="button" class="btn btn-success btn-block">Convert</button>
       </form>
+
+      <div id="convertedCurrencyOutput"></div>
     </div>
   </body>
 </html>
