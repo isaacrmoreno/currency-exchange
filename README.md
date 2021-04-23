@@ -1,6 +1,5 @@
 <h3 align="center">
-Project Name
-</h3>
+Currency Exchange</h3>
 
 <hr style="height: 1px; border:none; color:#333; background" />
 
