@@ -13,27 +13,31 @@
       <h3>Convert Your USD Below!</h3>
 
       <form>
-        <label for="">$</label>
+        <label for="dollarAmount">$USD:</label>
         <input type="text" id="dollarAmount" name="dollarAmount" />
-        <select name="currency" id="selectedCurrency" class="form-control">
-          <option disabled hidden selected></option>
-          <option value="AED">Arab Emirates Dirham (AED)</option>
-          <option value="AFN">Afghan Afghani (AFN)</option>
-          <option value="ALL">Albanian Lek (ALL)</option>
-          <option value="AMD">Armenian Dram (AMD)</option>
-          <option value="ANG">Netherlands Antillian Guilder (ANG)</option>
-          <option value="FAK">Fake Currency to Return Error (FAK)</option>
+        =
+        <select name="currencyType" id="currencyType">
+          <option disabled hidden selected>Select Currency</option>
+          <option value="MXN">Mexico Peso (MXN)</option>
+          <option value="CAD">Canadian Dollar (CAD)</option>
+          <option value="EUR">Euro (EUR)</option>
+          <option value="RUB">Russian Ruble (RUB)</option>
+          <option value="JPY">Japanese Yen (JPY)</option>
+          <Option value="FAK">Fake Currency (FAK)</Option>
         </select>
+        <!-- <label for="currencyType">Currency:</label>
+        <input type="text" id="currencyType" name="currencyType" /> -->
         <button
+          type="button"
           id="convertCurrencyBtn"
-          type="submit"
-          class="btn btn-success btn-block"
+          class="btn btn-success btn-lg btn-block"
         >
-          Convert
+        💸 CONVERT 💸
         </button>
       </form>
 
       <div id="convertedCurrencyOutput">$</div>
+      <div id="errorMessage"></divid>
     </div>
   </body>
 </html>
