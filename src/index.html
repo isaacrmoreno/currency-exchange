@@ -18,26 +18,24 @@
         =
         <select name="currencyType" id="currencyType">
           <option disabled hidden selected>Select Currency</option>
+          <option value="FAK">Fake Currency (FAK)</option>
           <option value="MXN">Mexico Peso (MXN)</option>
           <option value="CAD">Canadian Dollar (CAD)</option>
           <option value="EUR">Euro (EUR)</option>
           <option value="RUB">Russian Ruble (RUB)</option>
           <option value="JPY">Japanese Yen (JPY)</option>
-          <Option value="FAK">Fake Currency (FAK)</Option>
         </select>
-        <!-- <label for="currencyType">Currency:</label>
-        <input type="text" id="currencyType" name="currencyType" /> -->
         <button
-          type="button"
+          type="submit"
           id="convertCurrencyBtn"
           class="btn btn-success btn-lg btn-block"
         >
-        💸 CONVERT 💸
+          💸 CONVERT 💸
         </button>
       </form>
 
       <div id="convertedCurrencyOutput">$</div>
-      <div id="errorMessage"></divid>
+      <div id="errorMessage"></div>
     </div>
   </body>
 </html>
