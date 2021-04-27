@@ -9,11 +9,22 @@ function clearFields() {
   $("#currencyType").val("");
 }
 
-function // put stuff here. 
-
-
+function getElements(response) {
+  if (response.success) {
+    $("#convertedCurrencyOutput").text(`${response.conversion_rates}`);
+  }
+}
 
 
 $(document).ready(function() {
-  
+  $("#convertCurrencyBtn").submit(function(event) {
+    event.preventDefault();
+
+    const selectedCurrency = $("#currencyType").val();
+    clearFields();
+    CurrencyAPI.convertCurrency(selectedCurrency)
+      .then(function (response) {
+        getElements(response);
+      });
+  });
 });
