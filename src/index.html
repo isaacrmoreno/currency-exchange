@@ -12,11 +12,11 @@
 
       <h3>Convert Your USD Below!</h3>
 
-      <form>
+      <form id="currencyForm">
         <label for="dollarAmount">$USD:</label>
-        <input type="text" id="dollarAmount" name="dollarAmount" />
+        <input type="text" id="dollarAmount" name="dollarAmount" required />
         =
-        <select name="currencyType" id="currencyType">
+        <select name="targetCurrency" id="targetCurrency">
           <option disabled hidden selected>Select Currency</option>
           <option value="FAK">Fake Currency (FAK)</option>
           <option value="MXN">Mexico Peso (MXN)</option>
@@ -34,7 +34,7 @@
         </button>
       </form>
 
-      <div id="convertedCurrencyOutput">$</div>
+      <div id="convertedCurrencyOutput"></div>
       <div id="errorMessage"></div>
     </div>
   </body>
