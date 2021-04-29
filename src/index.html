@@ -10,7 +10,7 @@
     <div class="container">
       <h1>The Currency Exchange</h1>
 
-      <h4>Enter Amount you would like to convert:</h4>
+      <h4>Enter Amount You Would Like to Convert:</h4>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -19,10 +19,8 @@
         <input
           id="dollarAmount"
           name="dollarAmount"
-          required
           type="number"
           class="form-control"
-          aria-label="Amount (to the nearest dollar)"
         />
       </div>
 
@@ -35,8 +33,13 @@
           </div>
           <select class="custom-select" name="baseCurrency" id="baseCurrency">
             <option selected>Choose...</option>
+            <option value="FAK">Fake Currency (FAK)</option>
             <option value="USD">US Dollar (USD)</option>
-            <option value="ZMW">Zambian Kwacha (ZMW)</option>
+            <option value="MXN">Mexico Peso (MXN)</option>
+            <option value="CAD">Canadian Dollar (CAD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="RUB">Russian Ruble (RUB)</option>
+            <option value="JPY">Japanese Yen (JPY)</option>
           </select>
         </div>
 
@@ -53,6 +56,7 @@
           >
             <option selected>Choose...</option>
             <option value="FAK">Fake Currency (FAK)</option>
+            <option value="USD">US Dollar (USD)</option>
             <option value="MXN">Mexico Peso (MXN)</option>
             <option value="CAD">Canadian Dollar (CAD)</option>
             <option value="EUR">Euro (EUR)</option>
