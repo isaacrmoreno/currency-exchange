@@ -4,19 +4,6 @@ import './css/styles.css';
 import $ from 'jquery';
 import CurrencyAPI from './js/currency';
 
-// function getElements(response) {
-//   const baseCurrency = $("#baseCurrency").val();
-//   const targetCurrency = $("#targetCurrency").val();
-//   const dollarAmount = $("#dollarAmount").val();
-//   let conversionRate = response.conversion_rate.toFixed(2); 
-  
-//   if (response.base_code) {  //adjust for error with fake base code? 
-//     $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount} = ${targetCurrency}: $${conversionRate}`); 
-//   } else {
-//     $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
-//   }
-// }
-
 $(document).ready(() => {
   $("#currencyForm").submit((e) => {
     e.preventDefault();
@@ -29,10 +16,10 @@ $(document).ready(() => {
       });
 
     function getElements(response) {
-      let conversionRate = response.conversion_result.toFixed(2); 
-      
-      if (response.base_code) {  //adjust for error with fake base code? 
-        $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount} = ${targetCurrency}: $${conversionRate}`); 
+      const conversionRate = response.conversion_result; 
+      if (response.result === "success") {
+        $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount.toFixed(2)} = ${targetCurrency}: $${conversionRate.toFixed(2)}`); 
+        $("#errorMessage").hide();
       } else {
         $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
       }
