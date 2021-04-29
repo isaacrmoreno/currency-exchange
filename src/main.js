@@ -4,23 +4,39 @@ import './css/styles.css';
 import $ from 'jquery';
 import CurrencyAPI from './js/currency';
 
+// function getElements(response) {
+//   const baseCurrency = $("#baseCurrency").val();
+//   const targetCurrency = $("#targetCurrency").val();
+//   const dollarAmount = $("#dollarAmount").val();
+//   let conversionRate = response.conversion_rate.toFixed(2); 
+  
+//   if (response.base_code) {  //adjust for error with fake base code? 
+//     $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount} = ${targetCurrency}: $${conversionRate}`); 
+//   } else {
+//     $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
+//   }
+// }
+
 $(document).ready(() => {
   $("#currencyForm").submit((e) => {
     e.preventDefault();
+    const baseCurrency = $("#baseCurrency").val();
     const targetCurrency = $("#targetCurrency").val();
-    CurrencyAPI.convert(targetCurrency)
+    const dollarAmount = parseInt($("#dollarAmount").val());
+    CurrencyAPI.convert(baseCurrency, targetCurrency, dollarAmount)
       .then((response) => {
         getElements(response);
       });
+
+    function getElements(response) {
+      let conversionRate = response.conversion_result.toFixed(2); 
+      
+      if (response.base_code) {  //adjust for error with fake base code? 
+        $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount} = ${targetCurrency}: $${conversionRate}`); 
+      } else {
+        $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
+      }
+    }
   });
 });
 
-function getElements(response) {
-  let dollarAmount = $("#dollarAmount").val();
-  let conversionRate = response.conversion_rates;
-  if (response.base_code) { 
-    $("#convertedCurrencyOutput").text(`USD: $${dollarAmount} = ${response.base_code}: $${conversionRate}`); 
-  } else {
-    $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
-  }
-}
