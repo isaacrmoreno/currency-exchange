@@ -4,8 +4,10 @@ body {
 
 h1,
 h3,
+h4,
 form {
   text-align: center;
+  margin: 15px;
 }
 
 #convertedCurrencyOutput {
@@ -13,19 +15,12 @@ form {
   border: solid black 1px;
   border-radius: 10px;
   color: white;
+  font-size: 1.2em;
   height: 50px;
   margin: 10px auto;
   padding: 10px;
   text-align: center;
-  width: 500px;
-}
-
-#targetCurrency {
-  background-color: #161616;
-  border: solid 1px;
-  border-radius: 5px;
-  color: white;
-  height: 32px;
+  width: 1080px;
 }
 
 #errorMessage {
