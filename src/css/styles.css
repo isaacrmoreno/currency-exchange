@@ -17,13 +17,18 @@ form {
   margin: 10px auto;
   padding: 10px;
   text-align: center;
-  width: 200px;
+  width: 500px;
 }
 
-#currencyType {
+#targetCurrency {
   background-color: #161616;
   border: solid 1px;
   border-radius: 5px;
   color: white;
   height: 32px;
+}
+
+#errorMessage {
+  text-align: center;
+  font-size: 1.5em;
 }
