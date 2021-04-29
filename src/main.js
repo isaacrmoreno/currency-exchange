@@ -4,27 +4,23 @@ import './css/styles.css';
 import $ from 'jquery';
 import CurrencyAPI from './js/currency';
 
-function clearFields() {
-  $("#dollarAmount").val("");
-  $("#currencyType").val("");
-}
-
-function getElements(response) {
-  if (response.success) {
-    $("#convertedCurrencyOutput").text(`${response.conversion_rates}`);
-  }
-}
-
-
-$(document).ready(function() {
-  $("#convertCurrencyBtn").submit(function(event) {
-    event.preventDefault();
-
-    const selectedCurrency = $("#currencyType").val();
-    clearFields();
-    CurrencyAPI.convertCurrency(selectedCurrency)
-      .then(function (response) {
+$(document).ready(() => {
+  $("#currencyForm").submit((e) => {
+    e.preventDefault();
+    const targetCurrency = $("#targetCurrency").val();
+    CurrencyAPI.convert(targetCurrency)
+      .then((response) => {
         getElements(response);
       });
   });
 });
+
+function getElements(response) {
+  let dollarAmount = $("#dollarAmount").val();
+  let conversionRate = response.conversion_rates;
+  if (response.base_code) { 
+    $("#convertedCurrencyOutput").text(`USD: $${dollarAmount} = ${response.base_code}: $${conversionRate}`); 
+  } else {
+    $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
+  }
+}
