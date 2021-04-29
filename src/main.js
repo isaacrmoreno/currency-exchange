@@ -9,14 +9,14 @@ $(document).ready(() => {
     e.preventDefault();
     const baseCurrency = $("#baseCurrency").val();
     const targetCurrency = $("#targetCurrency").val();
-    const dollarAmount = parseInt($("#dollarAmount").val());
+    let dollarAmount = parseInt($("#dollarAmount").val());
     CurrencyAPI.convert(baseCurrency, targetCurrency, dollarAmount)
       .then((response) => {
         getElements(response);
       });
 
     function getElements(response) {
-      const conversionRate = response.conversion_result; 
+      let conversionRate = response.conversion_result; 
       if (response.result === "success") {
         $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount.toFixed(2)} = ${targetCurrency}: $${conversionRate.toFixed(2)}`); 
         $("#errorMessage").hide();
