@@ -16,13 +16,12 @@ $(document).ready(() => {
       });
 
     function getElements(response) {
-      let conversionRate = response.conversion_result; 
-      if (response.result === "success") {
-        $("#convertedCurrencyOutput").text(`${baseCurrency}: $${dollarAmount.toFixed(2)} = ${targetCurrency}: $${conversionRate.toFixed(2)}`); 
-        $("#errorMessage").hide();
-      } else {
-        $("#errorMessage").text("Ops Looks Like Your Trying to Convert a Fake Currency 🤷 "); 
-      }
+      if (response.result === "error") {
+        $("#errorMessage").text(`Error: ${response["error-type"]}`);
+      } else if (response.result === "success") {
+        let conversionRate = response.conversion_result; 
+        $("#convertedCurrencyOutput").html(`${baseCurrency}: $${dollarAmount.toFixed(2)} = ${targetCurrency}: $${conversionRate.toFixed(2)}`); 
+      } 
     }
   });
 });
