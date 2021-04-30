@@ -44,7 +44,9 @@ Now that you have access to your API key and ExchangeRate-API's dashboard we wan
 4. Within your command line type the following:
 
    - `git status` to verify the .gitignore file has been modified.
-   - `git add .gitignore`, `return`, `git push origin main`. To verify the .env file is being ignored you shouldn't see it anymore when you type `git status` within the command line.
+   - `git add .gitignore`, `return` to stage .gitignore file.
+   - `git commit -m "update .gitignore file"`.
+   - `git push origin main`. To verify the .env file is being ignored you shouldn't see it anymore when you type `git status` within the command line.
 
 5. From here you can build your project with confidence knowing your precious API key is tucked away in the privacy of its own little .env file - Now go seize your day you beautiful developer! 🎉
 
@@ -57,7 +59,7 @@ No known Issues
 ### Technologies Used
 
 <p align="center">
-HTML | CSS | JavaScript | Bootstrap | jQuery | Webpack | Eslint | Babel | Jest | VScode | GitHub</p>
+HTML | CSS | JavaScript | Bootstrap | jQuery | Webpack | Eslint | Babel | Jest | Node | VScode | GitHub</p>
 
 ### Contact
 
